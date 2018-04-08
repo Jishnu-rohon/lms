@@ -1,0 +1,610 @@
+<div class="row clearfix" ng-init="init()">
+          	
+    <div class="panel-body tabcontent" style="display: block;">
+            <div class="col-md-12">
+                <div class="panel">
+                    <h4><i class="fa fa-eye" aria-hidden="true"></i>&nbsp; Show me my activities between following dates:</h4>
+                        <table class="table bold">
+                            <tbody>
+                                <form></form>
+                                    <tr>
+                                        <td>
+                                            <div class="form-group">
+                                                <input class="form-control" id="" placeholder="Date from" type="text">
+                                            </div>
+                                        </td>
+                                        
+                                        <td>
+                                            <div class="form-group">
+                                                <input class="form-control" id="" placeholder="Date To" type="text">
+                                            </div>
+                                        </td>
+                                        
+                                        <td>
+                                            <div class="form-group">
+                                                <button type="submit" class="btn btn-primary">Filter</button>
+                                            </div>
+                                        </td>
+                                        
+                                    </tr>
+                               
+                            </tbody>
+                        </table>
+                    </div>
+            </div> 
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="container-2">
+                         <div id="page-wrapper">   
+                            <div class="row">
+                                <div class="col-lg-3 col-sm-6">
+                                    <div class="circle-tile">
+                                        <a href="#">
+                                            <div class="circle-tile-heading dark-blue">
+                                                <i class="fa fa-users fa-fw fa-3x"></i>
+                                            </div>
+                                        </a>
+                                        <div class="circle-tile-content dark-blue">
+                                            <div class="circle-tile-description text-faded">
+                                                Total Lead Created
+                                            </div>
+                                            <div class="circle-tile-number text-faded">
+                                                265
+                                                <span id="sparklineA"></span>
+                                            </div>
+                                            <a href="#" class="circle-tile-footer">More Info <i class="fa fa-chevron-circle-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-sm-6">
+                                    <div class="circle-tile">
+                                        <a href="#">
+                                            <div class="circle-tile-heading green">
+                                                <i class="fa fa-money fa-fw fa-3x"></i>
+                                            </div>
+                                        </a>
+                                        <div class="circle-tile-content green">
+                                            <div class="circle-tile-description text-faded">
+                                                Total Lead Conversion by you 
+                                            </div>
+                                            <div class="circle-tile-number text-faded">
+                                                    <p><small><i class="fa fa-user" aria-hidden="true"></i> 384</small></p>
+                                                    <i class="fa fa-inr" aria-hidden="true"></i> 32,384                                                 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-sm-6">
+                                    <div class="circle-tile">
+                                        <a href="#">
+                                            <div class="circle-tile-heading orange">
+                                                <i class="fa fa-bell fa-fw fa-3x"></i>
+                                            </div>
+                                        </a>
+                                        <div class="circle-tile-content orange">
+                                            <div class="circle-tile-description text-faded">
+                                                Total Lead Failed
+                                            </div>
+                                            <div class="circle-tile-number text-faded">
+                                                9
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-sm-6">
+                                    <div class="circle-tile">
+                                        <a href="#">
+                                            <div class="circle-tile-heading blue">
+                                                <i class="fa fa-tasks fa-fw fa-3x"></i>
+                                            </div>
+                                        </a>
+                                        <div class="circle-tile-content blue">
+                                            <div class="circle-tile-description text-faded">
+                                                Total Underprocessed Leads     
+                                            </div>
+                                            <div class="circle-tile-number text-faded">
+                                                10
+                                                <span id="sparklineB"></span>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                
+                                <h3 class="normal-head">Bucket</h3>
+
+                                <div class="col-lg-3 col-sm-6">
+                                    <div class="circle-tile">
+                                        <a href="#">
+                                            <div class="circle-tile-heading dark-blue">
+                                                <i class="fa fa-users fa-fw fa-3x"></i>
+                                            </div>
+                                        </a>
+                                        <div class="circle-tile-content dark-blue">
+                                            <div class="circle-tile-description text-faded">
+                                                Lead Taken from Bucket 
+                                            </div>
+                                            <div class="circle-tile-number text-faded">
+                                                265
+                                                <span id="sparklineA"></span>
+                                            </div>
+                                            <!--<a href="#" class="circle-tile-footer">More Info <i class="fa fa-chevron-circle-right"></i></a>-->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-sm-6">
+                                    <div class="circle-tile">
+                                        <a href="#">
+                                            <div class="circle-tile-heading green">
+                                                <i class="fa fa-money fa-fw fa-3x"></i>
+                                            </div>
+                                        </a>
+                                        <div class="circle-tile-content green">
+                                            <div class="circle-tile-description text-faded">
+                                                Lead Converted from Bucket   
+                                            </div>
+                                            <div class="circle-tile-number text-faded">
+                                                    <i class="fa fa-inr" aria-hidden="true"></i>32,384
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-sm-6">
+                                    <div class="circle-tile">
+                                        <a href="#">
+                                            <div class="circle-tile-heading orange">
+                                                <i class="fa fa-bell fa-fw fa-3x"></i>
+                                            </div>
+                                        </a>
+                                        <div class="circle-tile-content orange">
+                                            <div class="circle-tile-description text-faded">
+                                                Lead Unseccessful from Bucket         
+                                            </div>
+                                            <div class="circle-tile-number text-faded">
+                                                9
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-sm-6">
+                                    <div class="circle-tile">
+                                        <a href="#">
+                                            <div class="circle-tile-heading blue">
+                                                <i class="fa fa-tasks fa-fw fa-3x"></i>
+                                            </div>
+                                        </a>
+                                        <div class="circle-tile-content blue">
+                                            <div class="circle-tile-description text-faded">
+                                                Your Lead converted by others from Bucket      
+                                            </div>
+                                            <div class="circle-tile-number text-faded">
+                                                10
+                                                <span id="sparklineB"></span>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ################### -->
+                            <div class="row">
+                                    <h3 class="normal-head">Achieved Activity</h3>
+                                <div class="col-lg-3 col-sm-6">
+                                    <div class="circle-tile">
+                                        <a href="#">
+                                            <div class="circle-tile-heading dark-blue">
+                                                <i class="fa fa-users fa-fw fa-3x"></i>
+                                            </div>
+                                        </a>
+                                        <div class="circle-tile-content dark-blue">
+                                            <div class="circle-tile-description text-faded">
+                                                Achieved Revenue &<br>Payment Target 
+                                            </div>
+                                            <div class="circle-tile-number text-faded">
+                                                    <i class="fa fa-inr" aria-hidden="true"></i> 265
+                                                <span id="sparklineA"></span>
+                                            </div>
+                                            <!--<a href="#" class="circle-tile-footer">More Info <i class="fa fa-chevron-circle-right"></i></a>-->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-sm-6">
+                                    <div class="circle-tile">
+                                        <a href="#">
+                                            <div class="circle-tile-heading green">
+                                                <i class="fa fa-money fa-fw fa-3x"></i>
+                                            </div>
+                                        </a>
+                                        <div class="circle-tile-content green">
+                                            <div class="circle-tile-description text-faded">
+                                                Achieved Payment Received 
+                                            </div>
+                                            <div class="circle-tile-number text-faded">
+                                                    <i class="fa fa-inr" aria-hidden="true"></i> 32,384
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-sm-6">
+                                    <div class="circle-tile">
+                                        <a href="#">
+                                            <div class="circle-tile-heading orange">
+                                                <i class="fa fa-bell fa-fw fa-3x"></i>
+                                            </div>
+                                        </a>
+                                        <div class="circle-tile-content orange">
+                                            <div class="circle-tile-description text-faded">
+                                                Achieved Shortfall 
+                                            </div>
+                                            <div class="circle-tile-number text-faded">
+                                                9
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-sm-6">
+                                    <div class="circle-tile">
+                                        <a href="#">
+                                            <div class="circle-tile-heading blue">
+                                                <i class="fa fa-tasks fa-fw fa-3x"></i>
+                                            </div>
+                                        </a>
+                                        <div class="circle-tile-content blue">
+                                            <div class="circle-tile-description text-faded">
+                                                Achieved Percentage Achievement     
+                                            </div>
+                                            <div class="circle-tile-number text-faded">
+                                                10%
+                                                <span id="sparklineB"></span>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>                           
+                            </div>
+                        <!-- ####################### -->
+                        <div class="row">
+                                <h3 class="normal-head"> Revenue Target & Achievement</h3>
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="circle-tile">
+                                    <a href="#">
+                                        <div class="circle-tile-heading dark-blue">
+                                            <i class="fa fa-users fa-fw fa-3x"></i>
+                                        </div>
+                                    </a>
+                                    <div class="circle-tile-content dark-blue">
+                                        <div class="circle-tile-description text-faded">
+                                                Target Telecalls
+                                        </div>
+                                        <div class="circle-tile-number text-faded">
+                                            265
+                                            <span id="sparklineA"></span>
+                                        </div>
+                                        <!--<a href="#" class="circle-tile-footer">More Info <i class="fa fa-chevron-circle-right"></i></a>-->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="circle-tile">
+                                    <a href="#">
+                                        <div class="circle-tile-heading green">
+                                            <i class="fa fa-money fa-fw fa-3x"></i>
+                                        </div>
+                                    </a>
+                                    <div class="circle-tile-content green">
+                                        <div class="circle-tile-description text-faded">
+                                                Target Revenue
+                                        </div>
+                                        <div class="circle-tile-number text-faded">
+                                                <i class="fa fa-inr" aria-hidden="true"></i> 32,384
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="circle-tile">
+                                    <a href="#">
+                                        <div class="circle-tile-heading orange">
+                                            <i class="fa fa-bell fa-fw fa-3x"></i>
+                                        </div>
+                                    </a>
+                                    <div class="circle-tile-content orange">
+                                        <div class="circle-tile-description text-faded">
+                                                Virtual Connects
+                                        </div>
+                                        <div class="circle-tile-number text-faded">
+                                            9
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                           
+                        </div>
+
+                    <!-- ####################### -->
+                    <div class="row">
+                            <h3 class="normal-head">Activity Target & Achievement</h3>
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="circle-tile">
+                                <a href="#">
+                                    <div class="circle-tile-heading dark-blue">
+                                        <i class="fa fa-users fa-fw fa-3x"></i>
+                                    </div>
+                                </a>
+                                <div class="circle-tile-content dark-blue">
+                                    <div class="circle-tile-description text-faded">
+                                            Achievement
+                                    </div>
+                                    <div class="circle-tile-number text-faded">
+                                        265
+                                        <span id="sparklineA"></span>
+                                    </div>
+                                    <!--<a href="#" class="circle-tile-footer">More Info <i class="fa fa-chevron-circle-right"></i></a>-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="circle-tile">
+                                <a href="#">
+                                    <div class="circle-tile-heading green">
+                                        <i class="fa fa-money fa-fw fa-3x"></i>
+                                    </div>
+                                </a>
+                                <div class="circle-tile-content green">
+                                    <div class="circle-tile-description text-faded">
+                                            Physical Meetings
+                                    </div>
+                                    <div class="circle-tile-number text-faded">
+                                       5
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="circle-tile">
+                                <a href="#">
+                                    <div class="circle-tile-heading orange">
+                                        <i class="fa fa-bell fa-fw fa-3x"></i>
+                                    </div>
+                                </a>
+                                <div class="circle-tile-content orange">
+                                    <div class="circle-tile-description text-faded">
+                                            Virtual Connects
+                                    </div>
+                                    <div class="circle-tile-number text-faded">
+                                        5
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  
+                        <div class="col-lg-3 col-sm-6">
+                                <div class="circle-tile">
+                                    <a href="#">
+                                        <div class="circle-tile-heading blue">
+                                            <i class="fa fa-bell fa-fw fa-3x"></i>
+                                        </div>
+                                    </a>
+                                    <div class="circle-tile-content orange">
+                                        <div class="circle-tile-description text-faded">
+                                                Percentage  Achievement
+                                        </div>
+                                        <div class="circle-tile-number text-faded">
+                                            50%
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                         
+                    </div>
+                    
+                     <!-- ####################### -->
+                     <div class="row">
+                            <h3 class="normal-head">Shortfall</h3>
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="circle-tile">
+                                <a href="#">
+                                    <div class="circle-tile-heading dark-blue">
+                                        <i class="fa fa-users fa-fw fa-3x"></i>
+                                    </div>
+                                </a>
+                                <div class="circle-tile-content dark-blue">
+                                    <div class="circle-tile-description text-faded">
+                                            Shortfall
+                                    </div>
+                                    <div class="circle-tile-number text-faded">
+                                        10
+                                        <span id="sparklineA"></span>
+                                    </div>
+                                    <!--<a href="#" class="circle-tile-footer">More Info <i class="fa fa-chevron-circle-right"></i></a>-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="circle-tile">
+                                <a href="#">
+                                    <div class="circle-tile-heading green">
+                                        <i class="fa fa-money fa-fw fa-3x"></i>
+                                    </div>
+                                </a>
+                                <div class="circle-tile-content green">
+                                    <div class="circle-tile-description text-faded">
+                                            Physical Meetings
+                                    </div>
+                                    <div class="circle-tile-number text-faded">
+                                       5
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="circle-tile">
+                                <a href="#">
+                                    <div class="circle-tile-heading orange">
+                                        <i class="fa fa-bell fa-fw fa-3x"></i>
+                                    </div>
+                                </a>
+                                <div class="circle-tile-content orange">
+                                    <div class="circle-tile-description text-faded">
+                                            Virtual Connects
+                                    </div>
+                                    <div class="circle-tile-number text-faded">
+                                        5
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                                                 
+                    </div>
+
+                        </div><!-- page-wrapper END-->
+                       </div>
+                </div>
+            </div>    
+        </div>
+    
+  </div><!---- Row end ---->
+  
+  
+<!--------------- Your Pre Scheduled ------------------>         
+<div class="row table-pre table-pre1st">
+<h3>Your Pre Scheduled Job For Today: 7th August 2017 (Wednesday)</h3>
+
+<table class="points_table">
+    <thead>
+        <tr>
+            <th class="col-xs-2">Client Name</th>
+            <th class="col-xs-1">Time</th>
+            <th class="col-xs-1">Product</th>
+            <th class="col-xs-1">Lead Status</th>
+            <th class="col-xs-1">Expected Revenue</th>
+            <th class="col-xs-2">Job Assigned Date</th>
+            <th class="col-xs-1">Client Type</th>
+            <th class="col-xs-2">Mode of Contact</th>
+            <th class="col-xs-1">Action</th>
+        </tr>
+    </thead>
+
+    <tbody class="points_table_scrollbar">
+        <tr class="odd">
+            <td class="col-xs-2">Client Name</td>
+            <td class="col-xs-1">10:10AM</td>
+            <td class="col-xs-1">product</td>
+            <td class="col-xs-1">Office Internal</td>
+            <td class="col-xs-1">10,000/-</td>
+            <td class="col-xs-2">15-08-2017</td>
+            <td class="col-xs-1">Client Type</td>
+            <td class="col-xs-1">cool</td>
+            <td class="col-xs-2">
+                <p>
+                <button type="button" class="btnn btn-warning" data-toggle="modal" data-target="#myModal">View Note</button>
+                <a href="#/lead-creat" class="btnn btn-primary">Go to lead</a>
+                </p>
+            </td>
+        </tr>
+        <tr class="even">
+            <td class="col-xs-2">Client Name</td>
+            <td class="col-xs-1">10:10AM</td>
+            <td class="col-xs-1">product</td>
+            <td class="col-xs-1">To Do List</td>
+            <td class="col-xs-1">10,000/-</td>
+            <td class="col-xs-2">15-08-2017</td>
+            <td class="col-xs-1">Client Type</td>
+            <td class="col-xs-1">hot</td>
+            <td class="col-xs-2">
+                <p>
+                <button type="button" class="btnn btn-warning" data-toggle="modal" data-target="#myModal">View Note</button>
+                <button type="button" class="btnn btn-primary">Go to lead</button>
+                </p>
+            </td>
+        </tr>
+        
+    </tbody>
+</table>
+</div>
+  
+   <!--------------- Your Pre Scheduled ------------------>  
+   
+   
+<!--------------- Your Pre Scheduled ------------------>         
+<div class="row table-pre table-pre1st">
+        <h3>Your Open Leads that require Action are:</h3>
+        
+        <table class="points_table">
+            <thead>
+                <tr>
+                    <th class="col-xs-2">Next Action Date/Time</th>
+                    <th class="col-xs-2">Client Name</th>
+                    <th class="col-xs-1">Product</th>
+                    <th class="col-xs-1">Lead Status</th>
+                    <th class="col-xs-1">Expected Revenue</th>
+                    <th class="col-xs-1">Job Assigned Date</th>
+                    <th class="col-xs-1">Client Type</th>
+                    <th class="col-xs-1">Mode of Contact</th>
+                    <th class="col-xs-2">Action</th>
+                </tr>
+            </thead>
+        
+            <tbody class="points_table_scrollbar">
+                <tr class="odd">
+                    <td class="col-xs-2">01.01.2018 / 10:10AM</td>
+                    <td class="col-xs-2">Client Name</td>
+                    <td class="col-xs-1">product</td>
+                    <td class="col-xs-1 ov-auto">Office Internal</td>
+                    <td class="col-xs-1">10,000/-</td>
+                    <td class="col-xs-1">15-08-2017</td>
+                    <td class="col-xs-1">Client Type</td>
+                    <td class="col-xs-1">cool</td>
+                    <td class="col-xs-2">
+                        <p>
+                        <button type="button" class="btnn btn-danger" data-toggle="modal" data-target="#myModal">View Note</button>
+                        <a href="#/lead-creat" class="btnn btn-primary">Go to lead</a>
+                        </p>
+                    </td>
+                </tr>
+                <tr class="even">
+                    <td class="col-xs-2">01.01.2018 / 10:10AM</td>
+                    <td class="col-xs-2">Client Name</td>
+                    <td class="col-xs-1">product</td>
+                    <td class="col-xs-1 ov-auto">Office Internal</td>
+                    <td class="col-xs-1">10,000/-</td>
+                    <td class="col-xs-1">15-08-2017</td>
+                    <td class="col-xs-1">Client Type</td>
+                    <td class="col-xs-1">cool</td>
+                    <td class="col-xs-2">
+                        <p>
+                        <button type="button" class="btnn btn-danger" data-toggle="modal" data-target="#myModal">View Note</button>
+                        <a href="#/lead-creat" class="btnn btn-primary">Go to lead</a>
+                        </p>
+                    </td>  
+                </tr>
+                
+            </tbody>
+        </table>
+        </div>
+       
+  
+</div>
+<!-- /page content -->
+
+
+<!-------- View note modal --------->
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Note Details</h4>
+      </div>
+      <div class="modal-body">
+        <p>Some text in the modal.Some text in the modal.Some text in the modal.Some text in the modal.Some text in the modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>

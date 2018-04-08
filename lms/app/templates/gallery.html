@@ -1,0 +1,33 @@
+<div id="wrapper">
+	<div class="banner" ng-repeat='x in bannerBlock'>
+    	<img src="{{x.img}}" />
+        <div class="desc">
+        	<div class="container">
+            	<div class="text">
+                	<h1>{{x.heading}}</h1>
+                    <p>{{x.paragraph}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="gallery">
+    	<div class="container">
+        	<div class="text-block">
+        		<h4>{{heading.text}}</h4>
+            </div>
+            <div class="bottom"></div>
+        	
+            <div class="img-block" ng-repeat='x in imgBlock'>
+            	<img src="{{x.img}}" alt="" />
+                <div class="block">
+                <a href="#">{{x.text}}</a>
+                </div>
+            </div>
+
+            <div class="clear"></div>
+            <div class="read-more">
+            	<a href="#">{{link.text}}</a>
+            </div>
+        </div>
+    </div>
+</div>

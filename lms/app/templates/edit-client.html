@@ -1,0 +1,327 @@
+<div id="L8" class="panel-body tabcontent" style="display: block;" ng-init="init()">
+  <div class="col-sm-12">
+    <div class="row">
+      <h3 class="heading-bg">Edit Existing Client </h3>
+      <form ng-submit="updateClient()">
+        <div class="row">
+          <div class="col-sm-5 col-sm-offset-0">
+            <div class="form-group">
+              <label for=" ">Saluation:</label>
+              <select class="form-control" ng-model="clientService.client.saluation">
+                <option selected value=""> Select</option>
+                <option value="Mr.">Mr.</option>
+                <option value="Mrs.">Mrs.</option>
+                <option value="Miss.">Miss.</option>
+                <option value="Others">Others</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for=" ">First Name:</label>
+              <input type="text" class="form-control" id="#" ng-model="clientService.client.fName" placeholder="First Name">
+            </div>
+            <div class="form-group">
+              <label for=" ">Middle Name:</label>
+              <input type="text" class="form-control" id="#" ng-model="clientService.client.mName" placeholder="Middle Name">
+            </div>
+            <div class="form-group">
+              <label for=" ">Last Name:</label>
+              <input type="text" class="form-control" id="#" ng-model="clientService.client.lName" placeholder="Last Name">
+            </div>
+            <div class="form-group">
+              <label for=" ">Religion:</label>
+              <!-- <select class="form-control" ng-model="clientService.client.religionSlno">
+                <option selected value="-1">Select Religion</option>
+                <option ng-repeat="x in masterData.religion" value="{{x.slno}}">{{x.religionName}}</option>
+              </select> -->
+              <select class="form-control" ng-options="x.slno as x.religionName for x in masterData.religion" ng-model="clientService.client.religionSlno">
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for=" ">Gender of Client:</label>
+                <select class="form-control" ng-options="x.slno as x.genderName for x in masterData.genders" ng-model="clientService.client.genderSlno">
+                </select>
+            </div>
+            
+
+            <div class="form-group">
+              <label for=" ">Date of Birth:</label>
+              <!-- <input type="text" class="form-control datepicker hasDatepicker" id="#" ng-model="clientService.client.dob" placeholder="Date of Birth"> -->
+              <p class="input-group">
+                <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="clientService.client.dob" is-open="opened" datepicker-options="dateOptions" close-text="Close" ng-click="open($event)" ng-change="dobChange()"/>
+                <span class="input-group-btn">
+                  <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                </span>
+	            </p>
+	          </div>
+
+
+            <div class="form-group">
+              <label for=" ">Nature of Client:</label>
+                <select class="form-control" ng-options="x.slno as x.natureName for x in masterData.clientNature" ng-model="clientService.client.clientNatureSlno">
+                </select>
+            </div>
+            
+            <h2 class="heading-bg-h2">Profession </h2>
+
+            <div class="form-group">
+              <label for=" ">Profession Type:</label>
+                <select class="form-control" ng-options="x.slno as x.profession for x in masterData.professionTypes" ng-model="clientService.client.profession.professionTypeSlno">
+                </select>
+            </div>   
+            <div class="form-group">
+              <label for=" ">Designation:</label>
+              <input type="text" class="form-control" id="#" ng-model="clientService.client.profession.designation" placeholder="Designation">
+            </div>
+            <div class="form-group">
+              <label for=" ">Company Name:</label>
+              <input type="text" class="form-control" id="#" ng-model="clientService.client.profession.companyName" placeholder="Company Name">
+            </div>
+            <div class="form-group">
+              <label for=" ">Company Address:</label>
+              <textarea class="form-control" rows="2" id="#" ng-model="clientService.client.profession.companyAddress" placeholder="Company Address"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for=" ">Country:</label>
+                <!-- <select class="form-control" ng-model="clientService.client.profession.countrySlno">
+                  <option selected value="-1"> Select Country </option>
+                  <option ng-repeat="x in masterData.country" value="{{x.slno}}">{{x.countryName}}({{x.countryCode}})</option> 
+                </select> -->
+
+                <select class="form-control" ng-options="x.slno as x.countryName+'('+x.countryCode+')' for x in masterData.country" ng-model="clientService.client.profession.countrySlno">
+                </select>
+            </div>
+            <div class="form-group">
+              <label for=" ">Company Postal Address Number:</label>
+              <input type="text" class="form-control" id="#" ng-model="clientService.client.profession.companyPin" placeholder="Company PIN No">
+            </div>
+            <div class="form-group">
+              <label for=" ">Phone Number:</label>
+              <input type="text" class="form-control" id="#" ng-model="clientService.client.profession.companyPhone" placeholder="Phone Number">
+            </div>
+            <div class="form-group">
+              <label for="email">Official Email address:</label>
+              <input type="email" class="form-control" id="#" ng-model="clientService.client.profession.companyEmail" placeholder="Official Email address">
+            </div>
+                  
+            <h2 class="heading-bg-h2">Contact details </h2>
+            <div class="form-group">
+              <label for="email">Primary Email address :</label>
+              <input type="email" class="form-control" id="email" ng-model="clientService.client.contact.pEmail" placeholder="Primary Email address">
+            </div>
+            <div class="form-group">
+              <label for="email">Secondary Email address :</label>
+              <input type="email" class="form-control" id="email" ng-model="clientService.client.contact.sEmail" placeholder="Secondary Email address">
+            </div>
+            <div class="form-group">
+              <label for=" ">Primary Phone Number :</label>
+              <input type="text" class="form-control" id="#" ng-model="clientService.client.contact.pMobile" placeholder="Primary Phone Number">
+            </div>
+              <div class="form-group">
+              <label for=" ">Secondary Phone Number :</label>
+              <input type="text" class="form-control" id="#" ng-model="clientService.client.contact.sMobile" placeholder="Secondary Phone Number">
+            </div>
+          </div>
+        
+          <div class="col-sm-5 col-sm-offset-1">
+            <h2 class="heading-bg-h2">Client's Address</h2>
+
+            <h3 class="hdng-bg-3">Present Address</h3>
+              <div class="form-group">
+              <label for="email">Street :</label>
+              <input class="form-control" id="#" ng-model="clientService.client.address.presentAddress.street" placeholder="Street Name" type="text">
+            </div>
+
+            <div class="form-group">
+              <label for=" ">Country:</label>
+              <!-- <select class="form-control" ng-model="clientService.client.address.presentAddress.countrySlno" ng-change="updateCountry('PA')">
+                <option selected value="-1"> Select Country </option>
+                <option ng-repeat="x in masterData.country" value="{{x.slno}}">{{x.countryName}}({{x.countryCode}})</option>
+              </select> -->
+
+              <select class="form-control" ng-options="x.slno as x.countryName+'('+x.countryCode+')' for x in masterData.country" ng-model="clientService.client.address.presentAddress.countrySlno" ng-change="updateCountry('PA')">
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for=" ">State:</label>
+                <!-- <select class="form-control" ng-model="clientService.client.address.presentAddress.stateSlno" ng-change="updateState('PA')">
+                  <option selected value="-1"> Select State </option>
+                  <option ng-repeat="x in presentAddressStates" value="{{x.slno}}">{{x.stateName}}</option> 
+                </select> -->
+
+                <select class="form-control" ng-options="x.slno as x.stateName for x in presentAddressStates" ng-model="clientService.client.address.presentAddress.stateSlno" ng-change="updateState('PA')">
+                </select>
+            </div>
+
+            <div class="form-group">
+              <label for=" ">City :</label>
+                <!-- <select class="form-control" ng-model="clientService.client.address.presentAddress.citySlno">
+                  <option selected value="-1"> Select City </option>
+                  <option ng-repeat="x in presentAddressCities" value="{{x.slno}}">{{x.cityName}}</option>  
+                </select> -->
+
+                <select class="form-control" ng-options="x.slno as x.cityName for x in presentAddressCities" ng-model="clientService.client.address.presentAddress.citySlno" ng-change="updateState('PA')">
+                </select>
+            </div>
+
+            <div class="form-group" >
+              <label for=" ">ZIP/PIN:</label>
+              <input type="text" class="form-control" id="#" ng-model="clientService.client.address.presentAddress.pincode" placeholder="ZIP/PIN">
+            </div>
+                  
+            <h3 class="hdng-bg-3">Indian Address</h3>
+            <div class="form-group">
+              <div class="checkbox">
+                <label><input type="checkbox" ng-model="obj.copyIndianAddress" ng-change="copyAddress('IA')"> Copy from present Address</label>
+              </div>
+            </div>
+            <div ng-hide="obj.copyIndianAddress">
+              <div class="form-group">
+                <label for="email">Address :</label>
+                <textarea class="form-control" ng-model="clientService.client.address.indianAddress.street" rows="1" id="comment"></textarea>
+              </div>
+              <div class="form-group">
+                <label for=" ">Country:</label>
+                  <!-- <select class="form-control" ng-model="clientService.client.address.indianAddress.countrySlno" ng-change="updateCountry('IA')">
+                      <option selected value="-1"> Select Country </option>
+                      <option ng-repeat="x in masterData.country" value="{{x.slno}}">{{x.countryName}}({{x.countryCode}})</option>
+                  </select> -->
+
+                  <select class="form-control" ng-options="x.slno as x.countryName+'('+x.countryCode+')' for x in masterData.country" ng-model="clientService.client.address.indianAddress.countrySlno" ng-change="updateCountry('IA')">
+                </select>
+              </div>
+              <div class="form-group">
+                <label for=" ">State:</label>
+                  <!-- <select class="form-control" ng-model="clientService.client.address.indianAddress.stateSlno" ng-change="updateState('IA')">
+                    <option selected value="-1"> Select State </option>
+                    <option ng-repeat="x in indianAddressStates" value="{{x.slno}}">{{x.stateName}}</option>  
+                  </select> -->
+
+                  <select class="form-control" ng-options="x.slno as x.stateName for x in indianAddressStates" ng-model="clientService.client.address.indianAddress.stateSlno" ng-change="updateState('IA')">
+                  </select>
+              </div>
+              <div class="form-group">
+                <label for=" ">City :</label>
+                  <!-- <select class="form-control" ng-model="clientService.client.address.indianAddress.citySlno">
+                    <option selected value="-1"> Select City </option>
+                    <option ng-repeat="x in indianAddressCities" value="{{x.slno}}">{{x.cityName}}</option>  
+                  </select> -->
+
+                  <select class="form-control" ng-options="x.slno as x.cityName for x in indianAddressCities" ng-model="clientService.client.address.indianAddress.citySlno">
+                  </select>
+
+              </div>
+              <div class="form-group">
+                <label for=" ">ZIP/PIN</label>
+                <input type="text" class="form-control" id="#" ng-model="clientService.client.address.indianAddress.pincode" placeholder="Company PIN No">
+              </div>
+            </div>
+            <h3 class="hdng-bg-3">Overseas Address</h3>
+            <div class="form-group">
+                <div class="checkbox">
+                  <label><input type="checkbox" ng-model="obj.copyOverseasAddress" ng-change="copyAddress('OA')"> Copy from present Address</label>
+                </div>
+            </div>
+
+            <div ng-hide="obj.copyOverseasAddress">
+              <div class="form-group">
+                <label for="email">Address :</label>
+                <textarea class="form-control" ng-model="clientService.client.address.overseasAddress.street" rows="1" id="comment"></textarea>
+              </div>
+              <div class="form-group">
+                <label for=" ">Country:</label>
+                  <!-- <select class="form-control" ng-model="clientService.client.address.overseasAddress.countrySlno" ng-change="updateCountry('OA')">
+                      <option selected value="-1"> Select Country </option>
+                      <option ng-repeat="x in masterData.country" value="{{x.slno}}">{{x.countryName}}({{x.countryCode}})</option> 
+                  </select> -->
+
+                  <select class="form-control" ng-options="x.slno as x.countryName+'('+x.countryCode+')' for x in masterData.country" ng-model="clientService.client.address.overseasAddress.countrySlno" ng-change="updateCountry('OA')">
+                  </select>
+              </div>
+              <div class="form-group">
+                <label for=" ">State:</label>
+                  <!-- <select class="form-control" ng-model="clientService.client.address.overseasAddress.stateSlno" ng-change="updateState('OA')">
+                    <option selected value="-1"> Select State </option>
+                    <option ng-repeat="x in overseasAddressStates" value="{{x.slno}}">{{x.stateName}}</option>  
+                  </select> -->
+
+                  <select class="form-control" ng-options="x.slno as x.stateName for x in overseasAddressStates" ng-model="clientService.client.address.overseasAddress.stateSlno" ng-change="updateState('OA')">
+                  </select>
+
+              </div>
+              <div class="form-group">
+                <label for="">City :</label>
+                  <!-- <select class="form-control" ng-model="clientService.client.address.overseasAddress.citySlno">
+                    <option selected value="-1"> Select City </option>
+                    <option ng-repeat="x in overseasAddressCities" value="{{x.slno}}">{{x.cityName}}</option>  
+                  </select> -->
+
+                  <select class="form-control" ng-options="x.slno as x.cityName for x in overseasAddressCities" ng-model="clientService.client.address.overseasAddress.citySlno">
+                  </select>
+
+              </div>
+              <div class="form-group">
+                <label for=" ">ZIP/PIN:</label>
+                <input type="text" class="form-control" id="#" ng-model="clientService.client.address.overseasAddress.pincode" placeholder="ZIP Code">
+              </div>
+            </div>
+                  
+            <h2 class="heading-bg-h2">KYC Documents </h2>
+            <div class="form-group">
+              <label for="email">PAN Number :</label>
+              <input class="form-control" id="#" ng-model="clientService.client.kyc.pan" placeholder="PAN Number" type="text">
+            </div>
+            <div class="form-group">
+                <label for="email">Passport Number :</label>
+                <input class="form-control" id="#" ng-model="clientService.client.kyc.passport" placeholder="Passport Number" type="text">
+            </div>
+            <div class="form-group">
+                <label for="email">Voter Id Number :</label>
+                <input class="form-control" id="#" ng-model="clientService.client.kyc.voterId" placeholder="Voter Id Number" type="text">
+            </div>  
+            <div class="form-group">
+                <label for="email">Aadhaar Number :</label>
+                <input class="form-control" id="#" ng-model="clientService.client.kyc.adhar" placeholder="Adhar Number" type="text">
+            </div>
+            <!-- <div class="form-group">
+              <label for="email">Others:</label>
+              <input class="" id="#" ng-model="clientService.client.kyc.pan" placeholder="Voter Id Number" type="file">
+              <i>Please upload the document</i>
+            </div> -->
+          </div>
+        </div> 
+        <div class="row">
+          <div class="col-sm-11"> 
+            <div class="form-group">
+              <label for="comment">Client Description :</label>
+              <textarea class="form-control" ng-model="clientService.client.clientDesc" rows="2" id="" placeholder="Enter a short description on the Client"></textarea>
+            </div>    
+            <div class="form-group">
+                <label for="comment">Client Precautions or Restrictions :</label>
+              <textarea class="form-control" ng-model="clientService.client.clientPrecations" rows="2" id="" placeholder="Any causes of Concern or Likes and Dislikes of the Client"></textarea>
+            </div>    
+          </div>   
+        </div> 
+        <div class="row">
+        <div class="form-group">
+            <br>
+            <button type="submit" class="btn btn-primary btn-lg"><i class="fa fa-floppy-o" aria-hidden="true"></i> Save Client</button>
+          </div>
+        </div>
+<!--         <div class="row">
+          <div class="alert alert-success alert-dismissable">
+              <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Success!</strong> Indicates a successful or positive action.
+          </div>
+          <div class="alert alert-danger alert-dismissable">
+              <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Sorry!</strong> Please try again
+          </div>
+        </div> -->
+      </form>
+      <div class="clearfix"></div>
+    </div> 
+  </div>
+</div>

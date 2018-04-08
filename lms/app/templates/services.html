@@ -1,0 +1,28 @@
+<div id="wrapper">
+	<div class="banner">
+    	<img src="images/inner-banner2.jpg" />
+        <div class="desc">
+        	<div class="container">
+            	<div class="text">
+                	<h1>Our Services</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="services">
+    	<div class="container">
+        	<h4>{{heading.text}}</h4>
+           <div class="box" ng-repeat='x in services'>	 
+        		<div class="img-block">
+            		<img src="{{x.imgUrl}}" />
+            	</div>
+                <div class="text">
+                	<h5>{{x.heading2}}</h5>
+                    <p>{{x.paragraph}}</p>
+                    <a href="{{x.url}}">{{x.link}}</a>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>

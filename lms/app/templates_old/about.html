@@ -1,0 +1,34 @@
+        
+
+<div id="wrapper">
+	
+
+    
+
+
+    <div class="banner">
+    	<img src="images/inner-banner1.jpg" />
+        <div class="desc">
+        	<div class="container">
+            	<div class="text">
+                	<h1>what do you do,</h1>
+                    <p>sorry, i don't understand <span>my englies is not very good</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="about">
+    	<div class="container" ng-repeat='x in aboutUsBlock'>
+        	<div class="ltBlock">
+            	<img src="{{x.img}}" />
+            </div>
+            <div class="rtBlock">
+            	<h3>{{x.heading}}</h3>
+                <p>{{x.paragraph}}</p>
+                <a href="#">{{x.link}}</a>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+	<br />
+</div>

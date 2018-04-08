@@ -1,0 +1,142 @@
+<div id="L9" class="panel-body tabcontent" style="display: block;" ng-init="init()">
+        <div class="col-md-12 clearfix">
+
+        <div class="row">
+                <h3 class="heading-bg">Search Clients </h3><!------ Inner page heading ------>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="email">Search by PAN / Email id :</label>
+                    <select class="form-control">
+                        <option>-- Select --</option>
+                        <option>pan</option>
+                        <option>Email</option>
+                    </select>
+                </div>
+                
+                </div>
+                
+                <div class="col-sm-6">
+                
+                <div class="form-group">
+                <label for="email">Search Client: </label>
+                
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Enter text to be Search...">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button"> <i class="fa fa-search" aria-hidden="true"></i> </button>
+                        </span>
+                    </div> 
+                </div>
+                
+            </div>                      
+
+        </div>
+
+        
+
+
+        <!-------- View Clients -------->
+            <div class="row">
+                <h3 class="heading-bg">View Clients </h3><!------ Inner page heading ------>
+                <div class="table-responsive table-view-clients">          
+                  <table class="table">
+                     <thead>
+                            <tr>
+                                <th class="">Name</th>
+                                <th class="">Date of Birth</th>
+                                <th class="">Product</th>
+                                <th class="">PAN No</th>
+                                <th class="">Passport No</th>
+                                <th class="">Client Since</th>
+                                <th class="">Action</th>
+                            </tr>
+                        </thead>
+                    <tbody>
+                      <tr class="odd">
+                        <td class="">Client Name</td>
+                        <td class="">20.12.3012</td>
+                        <td class="">Loan</td>
+                        <td class="">PAN no</td>
+                        <td class="">Passport No</td>
+                        <td class="">Client Since</td>
+                        <td class="">
+                            <p>
+                            <a href="#/lead-creat" class="btn btn-primary" title="View">
+                                <i class="fa fa-eye" aria-hidden="true"></i>
+                            </a>
+                            <a href="#/lead-creat" class="btn btn-primary" title="Edit"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                            <button type="button" class="btn btn-primary" title="Delete" data-toggle="modal" data-target="#delete1">
+                                <a href="#/lead-creat.html"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                            </button>
+
+                            <button type="button" class="btn btn-primary" title="Delete" data-toggle="collapse" data-target="#showmore">
+                              View More <i class="fa fa-caret-down" aria-hidden="true"></i>
+                            </button>
+
+                            </p>
+                        </td>
+                    </tr>
+                    <td colspan="7">
+                        <div id="showmore" class="collapse"> 
+                            <table class="table table-bordered inner-table">             
+                                <tbody>
+                                    <tr class="odd">
+                                        <td class="">Nature of Client</td>
+                                        <td class="">Client's Nature</td>                            
+                                    </tr>                                       
+                                    <tr class="even">
+                                        <td class="">Indian Address - City</td>
+                                        <td class="">Indian Address - City</td>
+                                    </tr> 
+                                    <tr class="odd">
+                                        <td class="">Overseas Address - City</td>
+                                        <td class="">Overseas Address - City</td>                            
+                                    </tr> 
+                                    <tr class="even">
+                                        <td class="">Aadhaar No</td>
+                                        <td class="">1234 5678 256</td>
+                                    </tr>
+            
+                                </tbody>
+                            </table>    
+                        </div>
+                    </td>
+                    </tbody>
+                  </table>
+                </div>
+                
+             </div>
+            
+           
+
+
+             <!-- Delete client Modal -->
+<div class="modal fade" id="delete1" role="dialog">
+        <div class="modal-dialog modal-sm text-center">
+        <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-body">
+            <h3>Do you want to delete?</h3><br>
+            <form>
+                  <div class="form-group">
+                    <label>Why do you want to Delete this Client ?</label>
+                    <br>
+                    <select class="form-control">
+                        <option selected> Select reason </option>
+                        <option>Reason 1</option>
+                        <option>Reason 2</option>
+                    </select>
+                </div>
+              <br>
+              <p>
+                  <button type="button" class="btn btn-default">Yes</button>
+                <button type="button" class="btn btn-success" data-dismiss="modal">No</button>
+              </p>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+        </div>

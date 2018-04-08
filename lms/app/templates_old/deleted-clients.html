@@ -1,0 +1,123 @@
+ <!-------- Restore Clients -------->
+ <div class="col-md-12 clearfix">
+
+        <div class="row">
+                <h3 class="heading-bg">Search Clients </h3><!------ Inner page heading ------>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="email">Search by PAN / Email id :</label>
+                    <select class="form-control">
+                        <option>-- Select --</option>
+                        <option>pan</option>
+                        <option>Email</option>
+                    </select>
+                </div>
+                
+                </div>
+                
+                <div class="col-sm-6">
+                
+                <div class="form-group">
+                <label for="email">Search Client: </label>
+                
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search...">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button"> <i class="fa fa-search" aria-hidden="true"></i> </button>
+                        </span>
+                    </div> 
+                </div>
+                
+            </div>                      
+
+        </div>            
+ <div class="row">
+        
+        <br>
+        <h3 class="heading-bg">Restore Clients </h3><!------ Inner page heading ------>
+            <div class="table-responsive table-view-clients">          
+              <table class="table">
+                 <thead>
+                        <tr>
+                            <th class="">Name</th>
+                            <th class="">Date of Birth</th>
+                            <th class="">Nature of Client</th>
+                            <th class="">Product</th>
+                            <th class="">Indian Address - City</th>
+                            <th class="">Overseas Address - City</th>
+                            <th class="">PAN No</th>
+                            <th class="">Passport No</th>
+                            <th class="">Aadhaar No</th>
+                            <th class="">Client Since</th>
+                            <th class="">Action</th>
+                        </tr>
+                   </thead>
+                <tbody>
+                     <tr class="odd">
+                        <td class="">Client Name</td>
+                        <td class="">20.12.3012</td>
+                        <td class="">Nature of Client</td>
+                        <td class="">Product</td>
+                        <td class="">Indian address</td>
+                        <td class="">Overseas Address</td>
+                        <td class="">PAN no</td>
+                        <td class="">Passport No</td>
+                        <td class="">Aadhaar No</td>
+                        <td class="">Client Since</td>
+                        <td class="">
+                            <p>
+                            <button type="button" class="btn btn-primary" title="Delete" data-toggle="modal" data-target="#restore1">
+                                Restore
+                            </button>
+                            </p>
+                        </td>
+                    </tr>
+                   
+                    <tr class="even">
+                       <td class="">Client Name</td>
+                        <td class="">20.12.3012</td>
+                        <td class="">Nature of Client</td>
+                        <td class="">Product</td>
+                        <td class="">Indian address</td>
+                        <td class="">Overseas Address</td>
+                        <td class="">PAN no</td>
+                        <td class="">Passport No</td>
+                        <td class="">Aadhaar No</td>
+                        <td class="">Client Since</td>
+                        <td class="">
+                            <p>
+                            <button type="button" class="btn btn-primary" title="Delete" data-toggle="modal" data-target="#restore1">
+                                Restore
+                            </button>
+                            </p>
+                        </td>
+                    </tr> 
+                    
+                </tbody>
+              </table>
+            </div>
+            
+         </div> 
+    </div> 
+
+
+
+<!-- Restore client Modal -->
+<div class="modal fade" id="restore1" role="dialog">
+<div class="modal-dialog modal-sm text-center">
+<!-- Modal content-->
+  <div class="modal-content">
+    <div class="modal-body">
+    <h3>Do really want to restore?</h3><br>
+      <br>
+      <p>
+          <button type="button" class="btn btn-default">Yes</button>
+        <button type="button" class="btn btn-success" data-dismiss="modal">No</button>
+      </p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    </div>
+  </div>
+</div>
+</div>

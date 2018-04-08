@@ -1,0 +1,176 @@
+.jcarousel-wrapper {
+    position: relative;
+}
+
+/** Carousel **/
+
+.jcarousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.jcarousel ul {
+    width: 20000em;
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.jcarousel li {
+    width: 200px;
+    float: left;
+    border: 1px solid #fff;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/*.jcarousel img {
+    display: block;
+    max-width: 100%;
+    height: auto !important;
+}*/
+
+/** Carousel Controls **/
+
+.jcarousel-control-prev,
+.jcarousel-control-next {
+    position: absolute;
+    top: 50%;
+    margin-top: -15px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+}
+
+.jcarousel-control-prev {
+    left:0px;
+}
+
+.jcarousel-control-next {
+    right:0px;
+}
+
+
+
+/** Carousel  2 **/
+.jcarousel2 {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.jcarousel2 ul {
+    width: 20000em;
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.jcarousel2 li {
+    width: 200px;
+    float: left;
+    border: 1px solid #fff;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/*.jcarousel img {
+    display: block;
+    max-width: 100%;
+    height: auto !important;
+}*/
+
+/** Carousel Controls **/
+.jcarousel2-control-prev,
+.jcarousel2-control-next {
+    position: absolute;
+    top: 50%;
+    margin-top: -15px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+}
+
+.jcarousel2-control-prev {
+    left:0px;
+}
+
+.jcarousel2-control-next {
+    right:0px;
+}
+/** //Carousel  2 **/
+
+/** Carousel  3 **/
+.jcarousel3 {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.jcarousel3 ul {
+    width: 20000em;
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.jcarousel3 li {
+    width: 200px;
+    float: left;
+}
+
+.jcarousel3 img {
+    display: block;
+    max-width: 100%;
+    height: auto !important;
+}
+
+/** Carousel Controls **/
+.jcarousel3-control-prev,
+.jcarousel3-control-next {
+    position: absolute;
+    top: 50%;
+    margin-top: -15px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+}
+
+.jcarousel3-control-prev {
+    left:15px;
+}
+
+.jcarousel3-control-next {
+    right:15px;
+}
+/** //Carousel  3 **/
+
+@media screen and (max-width:1025px) {
+.jcarousel-control-prev {
+    left:-15px;
+}
+
+.jcarousel-control-next {
+    right:-15px;
+}
+
+.jcarousel2-control-prev {
+    left:-15px;
+}
+
+.jcarousel2-control-next {
+    right:-15px;
+}
+}

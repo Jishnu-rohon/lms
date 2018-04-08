@@ -1,0 +1,317 @@
+<div id="L9" class="panel-body tabcontent" style="display: block;" ng-init="init()">
+    <div class="col-md-12 clearfix">
+        <div class="row">
+            <h3 class="heading-bg">Search Clients </h3><!------ Inner page heading ------>
+
+                
+            <div class="col-sm-12">
+                <div class="form-group">
+                <label for="email">Search Client: </label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" ng-model="clientSearch" placeholder="Enter text to be Search...">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button"> <i class="fa fa-search" aria-hidden="true"></i> </button>
+                        </span>
+                    </div> 
+                </div>
+                
+            </div>                      
+        </div>
+
+
+        
+        <div class="row">
+            <h3 class="heading-bg">View Clients </h3> <!-- Inner page heading -->
+            <div ng-if="clientList.length == 0">No Record Found!</div>
+            <div class="table-responsive table-view-clients">          
+                <table class="table">
+                    <tbody>
+                        <tr ng-repeat="x in clientList | filter:clientSearch">
+                            <td colspan="7">
+                            <table class="table table-client" style="margin-bottom: 0px;">
+                                <thead ng-if="$index == 0">
+                                    <tr>
+                                        <th class="">Saluation</th>
+                                        <th class="">Name</th>
+                                        <th class="">Date of Birth</th>
+                                        <th class="">Primary Email</th>
+                                        <th class="">Primary Contact</th>
+                                        <th class="">Client Since</th>
+                                        <th class="" style="width:24%;">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tr>
+                                    <td class="">{{x.saluation}}<span ng-if="x.saluation == null || x.saluation ==''">N/A</span></td>
+                                    <td class="">{{x.f_name}} {{x.m_name}} {{x.l_name}}</td>
+                                    <td class="">{{x.dob}}<span ng-if="x.dob == null || x.dob ==''">N/A</span></td>
+                                    <td class="">{{x.email1}}<span ng-if="x.email1 == null || x.email1 ==''">N/A</span></td>
+                                    <td class="">{{x.mobile1}}<span ng-if="x.mobile1 == null || x.mobile1 ==''">N/A</span></td>
+                                    <td class="">{{x.dt_register}}</td>
+                                    <td class="" style="width:24%;">
+                                        <p>
+                                            <span ng-if="data.menuArray[0].submenu[1].is_view == 1">
+                                                <button type="button" class="btn btn-primary" title="View" data-toggle="modal" data-target="#viewClient" ng-click="viewClient(x)">
+                                                    <i class="fa fa-eye" aria-hidden="true"></i>
+                                                </button>
+                                            </span>
+                                            <span ng-if="data.menuArray[0].submenu[1].is_edit == 1">
+                                                <a href="#/client/edit/{{x.slno}}" class="btn btn-primary" title="Edit"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                                            </span>
+                                            
+                                            <span ng-if="data.menuArray[0].submenu[1].is_delete == 1">
+                                                <button type="button" class="btn btn-primary" title="Delete" data-toggle="modal" data-target="#delete1" ng-click="setDeleteClientSlno(x)">
+                                                    <a><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                                </button>
+                                            </span>
+                                            
+                                            <button type="button" class="btn btn-primary" title="Delete" data-toggle="collapse" data-target="#showmore{{$index}}">
+                                                    <i class="fa fa-caret-down" aria-hidden="true"></i>
+                                            </button>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="7" style="padding:0;">
+                                        <div id="showmore{{$index}}" class="collapse"> 
+                                            <table class="table table-bordered inner-table">             
+                                                <tbody>
+                                                    <tr class="odd">
+                                                        <td class="">Nature of Client</td>
+                                                        <td class="">{{x.clientNature.natureName}}</td>                            
+                                                    </tr>                                       
+                                                    <tr class="even">
+                                                        <td class="">Religion</td>
+                                                        <td class="">{{x.religion.religionName}}</td>
+                                                    </tr> 
+                                                    <tr class="odd">
+                                                        <td class="">Secondary Contact: </td>
+                                                        <td class="">{{x.mobile2}}</td>                            
+                                                    </tr>
+                                                    <tr class="even">
+                                                        <td class="">Secondary Email: </td>
+                                                        <td class="">{{x.email2}}</td>
+                                                    </tr>
+                            
+                                                </tbody>
+                                            </table>    
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+            
+
+
+<!-- Delete Modal -->
+<div class="modal fade" id="delete1" role="dialog">
+    <div class="modal-dialog modal-sm text-center">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h3>Do you want to delete?</h3><br>
+                <form>
+                    <!-- <div class="form-group">
+                        <label>Why do you want to Delete this Client ?</label>
+                        <br>
+                        <select class="form-control">
+                            <option selected> Select reason </option>
+                            <option>Reason 1</option>
+                            <option>Reason 2</option>
+                        </select>
+                    </div>
+                    <br> -->
+                    <p>
+                        <button type="button" class="btn btn-default" ng-click="deleteClient()" data-dismiss="modal">Yes</button>
+                        <button type="button" class="btn btn-success" data-dismiss="modal">No</button>
+                    </p>
+                </form>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Client Details Modal -->
+<div class="modal fade" id="viewClient" role="dialog">
+    <div class="modal-dialog modal-lg text-center">
+        <div class="modal-content">
+            <div id="L8" class="panel-body tabcontent" style="display: block;">
+                <div class="col-sm-12">
+                    <div class="row">
+                        <h3 class="heading-bg">View Client </h3>
+                    </div>
+                    <div class="table-responsive">          
+                        <table class="table table-bordered">
+                            <tbody>
+                                <tr>
+                                    <td class="col-sm-5">Name:</td>
+                                    <td class="col-sm-7">{{selectedClient.saluation}} {{selectedClient.f_name}}     {{selectedClient.m_name}}    {{selectedClient.l_name}}</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td class="col-sm-5">Religion:</td>
+                                    <td class="col-sm-7">{{selectedClient.religion.clientNature}}  <span ng-if="selectedClient.religion.clientNature == null || selectedClient.religion.clientNature ==''">N/A</span></td>
+                                </tr>
+                                
+                                <tr>
+                                    <td class="col-sm-5">Gender:</td>
+                                    <td class="col-sm-7">{{selectedClient.gender.genderName}} <span ng-if="selectedClient.gender.genderName == null || selectedClient.gender.genderName ==''">N/A</span> </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td class="col-sm-5">DOB: </td>
+                                    <td class="col-sm-7">{{selectedClient.dob}}  <span ng-if="selectedClient.dob == null || selectedClient.dob ==''">N/A</span></td>
+                                </tr>
+                                
+                                <tr>
+                                    <td class="col-sm-5">Client Nature:</td>
+                                    <td class="col-sm-7">{{selectedClient.clientNature.natureName}} <span ng-if="selectedClient.clientNature.natureName == null || selectedClient.clientNature.natureName ==''">N/A</span></td>
+                                </tr>
+                                
+                                <tr>
+                                    <td colspan="2" class="table-header"><label>Profession: </label></td>
+                                </tr>
+                                
+                                <tr>
+                                    <td class="col-sm-5">Profession Type: </td>
+                                    <td class="col-sm-7">{{selectedClient.clientProfessions.profession}} <span ng-if="selectedClient.clientProfessions.profession == null ||selectedClient.clientProfessions.profession ==''">N/A</span></td>
+                                </tr>
+                                
+                                <tr>
+                                    <td class="col-sm-5">Designation: </td>
+                                    <td class="col-sm-7">{{selectedClient.clientProfessions.designation}} <span ng-if="selectedClient.clientProfessions.designation == null || selectedClient.clientProfessions.designation ==''">N/A</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td class="col-sm-5">Company Name: </td>
+                                    <td class="col-sm-7">{{selectedClient.clientProfessions.companyName}} <span ng-if="selectedClient.clientProfessions.companyName == null || selectedClient.clientProfessions.companyName ==''">N/A</span> </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="col-sm-5">Company Address: </td>
+                                    <td class="col-sm-7">{{selectedClient.clientProfessions.companyAddress}} <span ng-if="selectedClient.clientProfessions.companyAddress == null || selectedClient.clientProfessions.companyAddress ==''">N/A</span> </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="col-sm-5">Country: </td>
+                                    <td class="col-sm-7">{{selectedClient.clientProfessions.companyName}} <span ng-if="selectedClient.clientProfessions.companyName == null || selectedClient.clientProfessions.companyName ==''">N/A</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td class="col-sm-5">PIN:</td>
+                                    <td class="col-sm-7">{{selectedClient.clientProfessions.pin}} <span ng-if="selectedClient.clientProfessions.pin == null || selectedClient.clientProfessions.pin ==''">N/A</span></td>
+                                </tr>
+                                
+                                <tr>
+                                    <td class="col-sm-5">Office Contact:</td>
+                                    <td class="col-sm-7">{{selectedClient.clientProfessions.officePhone}} <span ng-if="selectedClient.clientProfessions.officePhone == null || selectedClient.clientProfessions.officePhonen ==''">N/A</span></td>
+                                </tr>
+                                
+
+                                <!-- 
+                                ===========================================================================
+                                    PERSONAL CONTACTS
+                                ===========================================================================
+                                -->
+                                <tr>
+                                    <td class="col-sm-5">Personal Contact: </td>
+                                    <td class="col-sm-7">{{selectedClient.clientProfessions.officeEmail}} <span ng-if="selectedClient.clientProfessions.officeEmail == null || selectedClient.clientProfessions.officeEmail ==''">N/A</span></td>
+                                </tr>
+                                
+                                <tr>
+                                    <td colspan="2" class="table-header">Contact Details: </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="col-sm-5">Primary Email: </td>
+                                    <td class="col-sm-7">{{selectedClient.email1}}<span ng-if="selectedClient.email1 == null || selectedClient.email1 ==''">N/A</span></td>
+                                </tr>
+                                
+                                <tr>
+                                    <td class="col-sm-5">Secondary Emial: </td>
+                                    <td class="col-sm-7">{{selectedClient.email2}}<span ng-if="selectedClient.email2 == null || selectedClient.email2 ==''">N/A</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td class="col-sm-5">Primary Contact: </td>
+                                    <td class="col-sm-7">{{selectedClient.mobile1}}<span ng-if="selectedClient.mobile1 == null ||selectedClient.mobile1 ==''">N/A</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td class="col-sm-5">Secondary Contact: </td>
+                                    <td class="col-sm-7">{{selectedClient.mobile2}}<span ng-if="selectedClient.mobile2 == null || selectedClient.mobile2 ==''">N/A</span></td>
+                                </tr>
+
+
+
+
+                                <!-- 
+                                ===========================================================================
+                                    ADDRESS
+                                ===========================================================================
+                                -->
+                                
+                                <tr>
+                                    <td colspan="2" class="table-header">Address:</td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                            <table ng-repeat="address in selectedClient.addresses" class="table table-bordered">
+                                                    
+                    
+                                                    <tr style="text-align:center">
+                                                        <th>Address Type:</th>
+                                                        <th ng-if="address.addressTypeSlno==1"><span>Present Address</span></th>
+                                                        <th ng-if="address.addressTypeSlno==2"><span>Indian Address</span></th>
+                                                        <th ng-if="address.addressTypeSlno==3"><span>Overseas Address</span></th> 
+                                                    </tr>
+                                                      
+                                                    <tr>
+                                                        <td class="col-sm-5">Street:</td>
+                                                        <td class="col-sm-7">{{address.street}} <span ng-if="address.street == null || address.street == ''">N/A</span> </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="col-sm-5">City: </td>
+                                                        <td class="col-sm-7">{{address.cityName}} <span ng-if="address.cityName == null || address.cityName == ''">N/A</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="col-sm-5">State: </td>
+                                                        <td class="col-sm-7">{{address.stateName}} <span ng-if="address.stateName == null || address.stateName == ''">N/A</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="col-sm-5">Country:</td>
+                                                        <td class="col-sm-7">{{address.countryName}} <span ng-if="address.countryName == null || address.countryName == ''">N/A</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="col-sm-5">PIN: </td>
+                                                        <td class="col-sm-7">{{address.pinSlno}} <span ng-if="address.pinSlno == null || address.pinSlno == ''">N/A</span> </td>
+                                                    </tr>
+                                                </table>
+                                    </td>
+                                </tr>
+                                
+                                
+
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,236 @@
+ <!-------- Restore Clients -------->
+ <div class="col-md-12 clearfix" ng-init="init()">
+
+        <div class="row">
+                <h3 class="heading-bg">Search Clients </h3><!------ Inner page heading ------>
+                <!-- <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="email">Search by PAN / Email id :</label>
+                    <select class="form-control">
+                        <option>-- Select --</option>
+                        <option>pan</option>
+                        <option>Email</option>
+                    </select>
+                </div>
+                
+                </div> -->
+                
+                <div class="col-sm-12">
+                
+                    <div class="form-group">
+                        <label for="email">Search Client: </label>
+                    
+                        <div class="input-group">
+                            <input type="text" class="form-control" ng-model="clientSearch" placeholder="Search...">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button"> <i class="fa fa-search" aria-hidden="true"></i> </button>
+                            </span>
+                        </div> 
+                    </div>
+                    
+                </div>                      
+
+        </div>
+
+        <div class="row">
+            <h3 class="heading-bg">View Clients </h3> <!-- Inner page heading -->
+            <div ng-if="clientList.length == 0">No Record Found!</div>
+            <div class="table-responsive table-view-clients">          
+                <table class="table">
+                    <tbody>
+                        <tr ng-repeat="x in clientList | filter:clientSearch">
+                            <td colspan="7">
+                            <table class="table table-client" style="margin-bottom: 0px;">
+                                <thead ng-if="$index == 0">
+                                    <tr>
+                                        <th class="">Saluation</th>
+                                        <th class="">Name</th>
+                                        <th class="">Date of Birth</th>
+                                        <th class="">Primary Email</th>
+                                        <th class="">Primary Contact</th>
+                                        <th class="">Client Since</th>
+                                        <th class="" style="width:24%;">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tr>
+                                    <td class="">{{x.saluation}}<span ng-if="x.saluation == null || x.saluation ==''">N/A</span></td>
+                                    <td class="">{{x.f_name}} {{x.m_name}} {{x.l_name}}</td>
+                                    <td class="">{{x.dob}}<span ng-if="x.dob == null || x.dob ==''">N/A</span></td>
+                                    <td class="">{{x.email1}}<span ng-if="x.email1 == null || x.email1 ==''">N/A</span></td>
+                                    <td class="">{{x.mobile1}}<span ng-if="x.mobile1 == null || x.mobile1 ==''">N/A</span></td>
+                                    <td class="">{{x.dt_register}}</td>
+                                    <td class="" style="width:24%;">
+                                        <p>
+                                        
+                                            <span ng-if="data.menuArray[0].submenu[1].is_delete == 1">
+                                                <button type="button" class="btn btn-primary" title="Restore" data-toggle="modal" data-target="#restore" ng-click="setRestoreClientSlno(x)">
+                                                    Restore
+                                                </button>
+                                            </span>
+                                            
+                                            <button type="button" class="btn btn-primary" title="" data-toggle="collapse" data-target="#showmore{{$index}}">
+                                                    <i class="fa fa-caret-down" aria-hidden="true"></i>
+                                            </button>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="7" style="padding:0;">
+                                        <div id="showmore{{$index}}" class="collapse"> 
+                                            <table class="table table-bordered inner-table">             
+                                                <tbody>
+                                                    <tr class="odd">
+                                                        <td class="">Nature of Client</td>
+                                                        <td class="">{{x.clientNature.natureName}}</td>                            
+                                                    </tr>                                       
+                                                    <tr class="even">
+                                                        <td class="">Religion</td>
+                                                        <td class="">{{x.religion.religionName}}</td>
+                                                    </tr> 
+                                                    <tr class="odd">
+                                                        <td class="">Secondary Contact: </td>
+                                                        <td class="">{{x.mobile2}}</td>                            
+                                                    </tr>
+                                                    <tr class="even">
+                                                        <td class="">Secondary Email: </td>
+                                                        <td class="">{{x.email2}}</td>
+                                                    </tr>
+                            
+                                                </tbody>
+                                            </table>    
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+ <!-- <div class="row">
+        
+        <br>
+        <h3 class="heading-bg">Restore Clients </h3> 
+            <div class="table-responsive table-view-clients">          
+              <table class="table">
+                 <thead>
+                        <tr>
+                            <th class="">Name</th>
+                            <th class="">Date of Birth</th>
+                            <th class="">Nature of Client</th>
+                            <th class="">Product</th>
+                            <th class="">Indian Address - City</th>
+                            <th class="">Overseas Address - City</th>
+                            <th class="">PAN No</th>
+                            <th class="">Passport No</th>
+                            <th class="">Aadhaar No</th>
+                            <th class="">Client Since</th>
+                            <th class="">Action</th>
+                        </tr>
+                   </thead>
+                <tbody>
+                     <tr class="odd">
+                        <td class="">Client Name</td>
+                        <td class="">20.12.3012</td>
+                        <td class="">Nature of Client</td>
+                        <td class="">Product</td>
+                        <td class="">Indian address</td>
+                        <td class="">Overseas Address</td>
+                        <td class="">PAN no</td>
+                        <td class="">Passport No</td>
+                        <td class="">Aadhaar No</td>
+                        <td class="">Client Since</td>
+                        <td class="">
+                            <p>
+                            <button type="button" class="btn btn-primary" title="Delete" data-toggle="modal" data-target="#restore1">
+                                Restore
+                            </button>
+                            </p>
+                        </td>
+                    </tr>
+                   
+                    <tr class="even">
+                       <td class="">Client Name</td>
+                        <td class="">20.12.3012</td>
+                        <td class="">Nature of Client</td>
+                        <td class="">Product</td>
+                        <td class="">Indian address</td>
+                        <td class="">Overseas Address</td>
+                        <td class="">PAN no</td>
+                        <td class="">Passport No</td>
+                        <td class="">Aadhaar No</td>
+                        <td class="">Client Since</td>
+                        <td class="">
+                            <p>
+                            <button type="button" class="btn btn-primary" title="Delete" data-toggle="modal" data-target="#restore1">
+                                Restore
+                            </button>
+                            </p>
+                        </td>
+                    </tr> 
+                    
+                </tbody>
+              </table>
+            </div>
+            
+         </div>  -->
+
+
+
+
+    </div> 
+
+
+
+<!-- Restore client Modal -->
+<div class="modal fade" id="restore1" role="dialog">
+<div class="modal-dialog modal-sm text-center">
+<!-- Modal content-->
+  <div class="modal-content">
+    <div class="modal-body">
+    <h3>Do really want to restore?</h3><br>
+      <br>
+      <p>
+        <button type="button" class="btn btn-default">Yes</button>
+        <button type="button" class="btn btn-success" data-dismiss="modal">No</button>
+      </p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<!-- Restore Modal -->
+<div class="modal fade" id="restore" role="dialog">
+    <div class="modal-dialog modal-sm text-center">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h3>Do you want to restore the client?</h3><br>
+                <form>
+                    <!-- <div class="form-group">
+                        <label>Why do you want to Delete this Client ?</label>
+                        <br>
+                        <select class="form-control">
+                            <option selected> Select reason </option>
+                            <option>Reason 1</option>
+                            <option>Reason 2</option>
+                        </select>
+                    </div>
+                    <br> -->
+                    <p>
+                        <button type="button" class="btn btn-default" ng-click="restoreClient()" data-dismiss="modal">Yes</button>
+                        <button type="button" class="btn btn-success" data-dismiss="modal">No</button>
+                    </p>
+                </form>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

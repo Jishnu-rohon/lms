@@ -1,0 +1,219 @@
+<div id="L15" class="panel-body tabcontent" style="display: block;">
+    <div class="col-md-12 clearfix">
+    <!-------- Mass Mailing -------->
+        <div class="row">
+            <h3 class="heading-bg">Mass Mailing </h3><!------ Inner page heading ------>
+             
+             <div class="col-sm-5">
+             <h2 class="heading-bg-h2">Creat Template</h2>
+                 <form action="#">
+                    <div class="form-group">
+                        <div class="checkbox">
+                            <p><b>Select more than one group :</b></p>
+                           <label class="checkbox-inline">
+                              <input type="checkbox" value="">NRI
+                            </label>
+                            <label class="checkbox-inline">
+                              <input type="checkbox" value="">Seafarer
+                            </label>
+                            <label class="checkbox-inline">
+                              <input type="checkbox" value="">Residential
+                            </label>
+                            <label class="checkbox-inline">
+                              <input type="checkbox" value="">Others
+                            </label>
+                        </div>
+                    </div>
+                  <div class="form-group">
+                    <label>Subject :</label>
+                    <input type="text" class="form-control" id="" placeholder="Subject">
+                  </div>
+                  <div class="form-group">
+                    <label>Message :</label>
+                    <textarea class="form-control" rows="5" id="" placeholder="Message"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label>Attachment :</label>
+                    <input type="file" class="" id="" placeholder="">
+                  </div>
+                  <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#sure">Send Mail</button>
+                  <button type="submit" class="btn btn-info">Save as template</button>
+                  
+                  </form> 
+              
+           </div><!----- Col-sm-5 End -->
+              
+            <div class="col-sm-5 col-sm-offset-1">
+            <h2 class="heading-bg-h2">Selected Template</h2>
+            <form>
+            
+                <div class="form-group">
+                    <label for="pwd">Select Template :</label>
+                    <select class="form-control">
+                        <option selected=""> Select Template </option>
+                        <option> 1 </option>
+                        <option> 2 </option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Subject :</label>
+                    <input type="text" class="form-control" id="" placeholder="Subject">
+                  </div>
+                  <div class="form-group">
+                    <label>Message :</label>
+                    <textarea class="form-control" rows="5" id="" placeholder="Message"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label>Attachment :</label>
+                    <input type="file" class="" id="" placeholder="">
+                  </div>
+                  <button type="submit" class="btn btn-primary">Send Mail</button>
+              
+              
+            </form>
+            
+            </div> 
+         </div> 
+         
+         <div class="row">
+            <h3 class="heading-bg">Individual Mailing </h3>
+             
+             <div class="col-sm-5">
+             <h2 class="heading-bg-h2">Select Client </h2>
+                 <form action="#">
+                    <div class="form-group">
+                    <label for="pwd">Select Client :</label> &nbsp;
+                    <button type="submit" class="btn btn-default" data-toggle="modal" data-target="#select-client">Select Client</button>
+                </div>
+                  <div class="form-group">
+                    <label>Subject :</label>
+                    <input type="text" class="form-control" id="" placeholder="Subject">
+                  </div>
+                  <div class="form-group">
+                    <label>Message :</label>
+                    <textarea class="form-control" rows="5" id="" placeholder="Message"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label>Attachment :</label>
+                    <input type="file" class="" id="" placeholder="">
+                  </div>
+                  <button type="submit" class="btn btn-primary">Send Mail</button>
+                  <button type="submit" class="btn btn-info">Save as template</button>
+                  
+                  </form> 
+              
+           </div>
+              
+            <div class="col-sm-5 col-sm-offset-1">
+            <h2 class="heading-bg-h2">Selected Template</h2>
+            <form>
+            
+                <div class="form-group">
+                    <label for="pwd">Select Template :</label>
+                    <select class="form-control">
+                        <option selected=""> Select Template </option>
+                        <option> 1 </option>
+                        <option> 2 </option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Subject :</label>
+                    <input type="text" class="form-control" id="" placeholder="Subject">
+                </div>
+                  <div class="form-group">
+                    <label>Message :</label>
+                    <textarea class="form-control" rows="5" id="" placeholder="Message"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label>Attachment :</label>
+                    <input type="file" class="" id="" placeholder="">
+                  </div>
+                  <button type="submit" class="btn btn-primary">Send Mail</button>
+              
+              
+            </form>
+            
+            </div> 
+         </div>
+         
+    </div> 
+</div>
+
+
+
+
+
+<!-- Select client Modal -->
+<div id="select-client" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+  
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Clients I handle</h4>
+        </div>
+        <div class="modal-body">
+          
+          <form>
+              <div class="form-group">
+                  <div class="checkbox">
+                      <p><b>Select single or multiple clients :</b></p>
+                     <label class="checkbox-inline">
+                        <input value="" type="checkbox">Client name 1
+                      </label>
+                      <label class="checkbox-inline">
+                        <input value="" type="checkbox">Client name 2
+                      </label>
+                      <label class="checkbox-inline">
+                        <input value="" type="checkbox">Client name 3
+                      </label>
+                      <label class="checkbox-inline">
+                        <input value="" type="checkbox">Client name 4
+                      </label>
+                  </div>
+              </div>
+              <button type="submit" class="btn btn-primary">Done</button>
+          </form>
+          
+        </div>
+        <div class="modal-footer">
+          &nbsp;
+        </div>
+      </div>
+  
+    </div>
+  </div>
+
+
+
+<!-- R U sure modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="sure" role="dialog">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Are you Sure ?</h4>
+      </div>
+      <div class="modal-body">
+        <p>
+          <button type="button" class="btn btn-success">Yes</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+        </p>
+      </div>
+      <div class="modal-footer">
+        &nbsp;
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
